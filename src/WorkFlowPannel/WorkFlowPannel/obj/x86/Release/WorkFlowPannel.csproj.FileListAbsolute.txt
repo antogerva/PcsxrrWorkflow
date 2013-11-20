@@ -1,0 +1,9 @@
+C:\Users\antogerva\emu\pcsxrr-13c\workflowPannel\WorkFlowPannel\WorkFlowPannel\bin\Release\WorkFlowPannel.exe
+C:\Users\antogerva\emu\pcsxrr-13c\workflowPannel\WorkFlowPannel\WorkFlowPannel\bin\Release\WorkFlowPannel.pdb
+C:\Users\antogerva\emu\pcsxrr-13c\workflowPannel\WorkFlowPannel\WorkFlowPannel\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\antogerva\emu\pcsxrr-13c\workflowPannel\WorkFlowPannel\WorkFlowPannel\obj\x86\Release\WorkFlowPannel.frmWorkFlowPannel.resources
+C:\Users\antogerva\emu\pcsxrr-13c\workflowPannel\WorkFlowPannel\WorkFlowPannel\obj\x86\Release\WorkFlowPannel.Properties.Resources.resources
+C:\Users\antogerva\emu\pcsxrr-13c\workflowPannel\WorkFlowPannel\WorkFlowPannel\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\antogerva\emu\pcsxrr-13c\workflowPannel\WorkFlowPannel\WorkFlowPannel\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\antogerva\emu\pcsxrr-13c\workflowPannel\WorkFlowPannel\WorkFlowPannel\obj\x86\Release\WorkFlowPannel.exe
+C:\Users\antogerva\emu\pcsxrr-13c\workflowPannel\WorkFlowPannel\WorkFlowPannel\obj\x86\Release\WorkFlowPannel.pdb

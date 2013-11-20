@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>PcsxrrWorkflow</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.dltk.core.scriptbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.koneki.ldt.nature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>debugger</name>
+			<type>2</type>
+			<location>C:/Users/antogerva/Downloads/koneki_git___org.eclipse.koneki.ldt-b1c5f0cc9ec8cf28cc39bcebf2925f9cefa1a376/git_fixes/configuration/org.eclipse.osgi/bundles/173/1/.cp/script/external</location>
+		</link>
+	</linkedResources>
+</projectDescription>

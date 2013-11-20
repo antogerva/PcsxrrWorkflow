@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<PcsxrrWorfkflow>
+   <PcsxrrPath>C:\Users\antogerva\emu\pcsxrr-14ddd\pcsx.exe</PcsxrrPath>
+   <MoviePath>C:\Users\antogerva\emu\pcsxrr-14ddd\movies\BB2 slash mode 6443 dammit.pxm</MoviePath>
+   <TasSpuPath>C:\Users\antogerva\emu\pcsxrr-14ddd\plugins\spuTAS.dll</TasSpuPath>
+   <EternalSpuPath>C:\Users\antogerva\emu\pcsxrr-14ddd\plugins\spuEternal_b.dll</EternalSpuPath>
+   <WorkflowPath>C:\Users\antogerva\emu\pcsxrr-14ddd\PcsxrrEncodeWofkflowV5.05\BB2 slash mode 6443 dammit.pxm</WorkflowPath>
+   <LuaScriptPath>C:\Users\antogerva\emu\pcsxrr-14ddd\PcsxrrEncodeWofkflowV5.05</LuaScriptPath>
+   <KkapturePath>
+   </KkapturePath>
+</PcsxrrWorfkflow>
