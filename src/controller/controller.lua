@@ -6,9 +6,7 @@ local M={}
 package.path = ";./src/?.lua;/.src/?.lua;./src/controller/?.lua;./dll/?.lua;./?.lua;../lua/?.lua;" ..package.path
 package.cpath = ";./src/?.dll;/.src/?.dll;./src/controller/?.dll;./dll/?.dll;./?.dll;../lua/?.dll;" ..package.cpath
 
-
 --local conf=require("model.config");
---local geoo=require("geometry");
 
 local lfs=require("lfs")
 local config=require("model.config")

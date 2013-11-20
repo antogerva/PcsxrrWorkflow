@@ -1,14 +1,12 @@
 
-
 package.path = ";./src/?.lua;/.src/?.lua;./src/controller/?.lua;./src/model/?.lua;./dll/?.lua;./?.lua;../lua/?.lua;" ..package.path
 package.cpath = ";?51.dll;src/?51.dll;./?.dll;./src/?.dll;src/?.dll;./dll/?.dll;./?.dll;../lua/?.dll;" ..package.cpath
-package.cpath = [[C:\Users\antogerva\Downloads\koneki_git___org.eclipse.koneki.ldt-b1c5f0cc9ec8cf28cc39bcebf2925f9cefa1a376\git_fixes_x86\workspace\PcsxrrWorkflow\src\?.dll]] ..package.cpath
-
+package.cpath = debug.getinfo(1).source:gsub("^@",""):gsub("[^\\]*$",""):gsub("src\\view\\$","").. [[lib\?.dll;]] ..package.cpath
 
 --os.execute("SET LUA_PATH=;src\?.lua;src\?\init.lua;src\?.luac;src\?\init.luac;src\socket\?.lua;src\socket\?\init.lua;src\socket\?.luac;src\socket\?\init.luac;")
 --os.execute("SET LUA_CPATH=;src\?.lua;src\?\init.lua;src\?.luac;src\?\init.luac;src\socket\?.lua;src\?51.dll;src\socket\?\init.lua;src\socket\?.luac;src\socket\?\init.luac;")
 
----
+--- The WorkFlowPannel
 -- @module workFlowPannel
 
 local M= {}
@@ -278,8 +276,10 @@ local function testiup()
     margin="10x10",
     size="400x200",
   }
-
-  k,err = winapi.open_reg_key([[HKEY_CURRENT_USER\Software\PCSX-RR]], true)
+  
+  local pcsxrrRegKey=[[HKEY_CURRENT_USER\Software\PCSX-RR]];
+  --[[
+  k,err = winapi.open_reg_key(pcsxrrRegKey, true)
   if not k then 
     return print('bad key',err)  --pcsxrr never ever run on the host computer?
   end  
@@ -287,6 +287,7 @@ local function testiup()
   print(k:get_value("PluginSPU"))
   txtNote1.value = k:get_value("PluginSPU");
   k:close()
+  --]]
 
   IupHandleManager:AddHandle(dlg)
 
@@ -310,6 +311,7 @@ local P={conf=config.new(),ctrl=controller.new()};
 -- @return #workFlowPannelInstance
 function M.new(conf,ctrl)
   local newPannel = {conf=conf,ctrl=ctrl};
+  --M.loadIupLib();
   
   -- set to new config the properties of a configInstance
   setmetatable(newPannel,{__index=P})
@@ -351,121 +353,8 @@ function P.startWorkFlowPannel()
   end
 end
 
-M.loadIupLib();
-M.new(nil,nil).startWorkFlowPannel();
+--Uncomment to do display here
+--M.loadIupLib();
+--M.new(nil,nil).startWorkFlowPannel();
 
 return M;
-
---[[
-
---]]
-
---[[
-
---- IupHandleManager 
--- @type iupHandleManager
-local IupHandleManager = {  
-  --- Contain the handles used by iup 
-  -- @field [parent=#iupHandleManager] #table handles
-  handles = {};
-
-  --- Add a handle
-  -- @function [parent=#iupHandleManager] AddHandle
-  -- @param #iupHandleManager self
-  -- @param #handle handle
-  AddHandle = function(self, handle)
-    if handle and handle.destroy then
-      table.insert(self.handles, handle)
-    end
-  end;
-
-  --- Remove a handle
-  -- @function [parent=#iupHandleManager] Dispose
-  -- @param #iupHandleManager self
-  -- @param #handle handle
-  Dispose = function(self)
-    for handleIndex, handle in ipairs(self.handles) do
-      if handle and handle.destroy then
-        handle:destroy()
-      end
-    end
-    self.handles = {}
-  end;
-}
-
-
---]]
-
---[[
---]]
-
---[[
-
-local IupManager = {
-  filePicker=function(self, message, defaultText, filter)
-    --fill the parameter
-    local msg = "Open 'calculator.xrc' resource file";
-    local defaultTxt = "calculator.xrc";  
-    --filter = "XRC files (*.xrc)|*.xrc|All files (*)|*";
-    local flter = "*";  
-    local filedlg = iup.filedlg{ALLOWNEW="NO", dialogtype = "OPEN", title =msg,filter = flter, filterinfo = "*", directory=currentDir} 
-    filedlg:popup (iup.ANYWHERE, iup.ANYWHERE)  
-    return filedlg.value;
-  end;
-  bloblo = "ff";
-  self={};  
-  dirPicker=function(self,message)
-    message = "Open 'calculator.xrc' resource file";  
-    local filedlg = iup.filedlg{ALLOWNEW="NO", dialogtype = "DIR", title = "Select a workspace",directory=currentDir}  
-    filedlg:popup(iup.ANYWHERE, iup.ANYWHERE)
-    return filedlg.value;
-  end;
-
-
-  setPathToTxtField=function(self, txtField, filePath)
-    --Ternary Operator
-    txtField.value= (filePath~="" and filePath) or txtField.value;    
-    --txtField.value= (filePath~="" and filePath) or (txtField.value and txtField.value) or "";
-  end;
-  
-  onPick0=function()
-    tools.to_string(self,true)
-    local filePath = IupManager.filePicker();
-    IupManager.setPathToTxtField(self, IupManager.self.txtPcsxrr, filePath);
-  end;
-  
-  onPick1=function(self)
-    local filePath = IupManager.filePicker();
-    IupManager.setPathToTxtField(self, IupManager.self.txtMovie, filePath);
-  end;
-  
-  onPick2=function(self)
-    --local filePath = gui.filepicker("Please select a workflow", "*");
-    local message = "Please select a workflow";
-    local filePath = IupManager.dirPicker(message);
-    IupManager.setPathToTxtField(self, IupManager.self.txtWorkflow, filePath);
-  end;
-  
-  onPick3=function(self)
-    local filePath = IupManager.filePicker("Please select the TAS SPU plugin", "dll", "*");
-    IupManager.setPathToTxtField(self, IupManager.self.txtTasSpu, filePath);
-  end;
-  
-  onPick4=function(self)
-    local filePath = IupManager.filePicker("Please select the Eternal SPU plugin", "dll");
-    IupManager.setPathToTxtField(self, IupManager.self.txtEternalSpu, filePath);
-  end;
-  
-  onUpdateData=function(self)
-    print("test")
-    print("test2")
-    print(lfs and "ok!!!" or "nope!!!")
-    print(lfs.currentdir())
-  end;
-  
-  
-  onRefreshScreen=function(self)
-    print("Refreshing the screen");
-  end;  
-}
---]]

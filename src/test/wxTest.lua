@@ -1,6 +1,4 @@
 --package.cpath = ";?51.dll;./src/?.dll;/.src/?.lua;./dll/?.dll;./?.dll;../lua/?.dll;" ..package.cpath
-package.cpath = [[C:\Users\antogerva\Downloads\__koneki_1.1_M2__org.eclipse.koneki.ldt-1.1_M2\1_1M2_x86_64\workspace\PcsxrrWorkflow\src\?.dll]] ..package.cpath
-package.cpath = [[C:\Users\antogerva\Downloads\__koneki_1.1_M2__org.eclipse.koneki.ldt-1.1_M2\1_1M2_x86_64\workspace\PcsxrrWorkflow\src\?51.dll]] ..package.cpath
 
 print("gd!!!")
  -- iuplua_open = package.loadlib("iuplua51.dll", "iuplua_open");

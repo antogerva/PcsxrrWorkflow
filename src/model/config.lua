@@ -96,11 +96,4 @@ function M.doStuff()
 end
 
 
---C.load(self,[[C:\Users\antogerva\Downloads\__koneki_1.1_M2__org.eclipse.koneki.ldt-1.1_M2\1_1M2_x86_64\workspace\PcsxrrWorkflow\conf.properties]]);
---C.load(self,[[C:\Users\antogerva\Downloads\__koneki_1.1_M2__org.eclipse.koneki.ldt-1.1_M2\test]]);
---tools.to_string(C, true);
-
---C.save(self, [[C:\Users\antogerva\Downloads\__koneki_1.1_M2__org.eclipse.koneki.ldt-1.1_M2\test]])
-
 return M;
-

@@ -23,7 +23,6 @@ function emu.iuplua()
   iup.Close(); 
 end
 
-
 -- this system allows you to open a number of dialogs without
 -- having to bother about cleanup when the script exits
 handles = {}; -- this table should hold the handle to all dialogs created in lua

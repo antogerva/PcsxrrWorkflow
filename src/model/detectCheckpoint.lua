@@ -1,5 +1,6 @@
 ---
 -- @module detectCheckpoint
+--TODO
 
 local M = {}
 require "gd"
